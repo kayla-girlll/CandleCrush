@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Candle Crush</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>Candle Haven</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product-list">
+      <!-- Example Candle Product -->
+      <div class="product">
+        <img src="https://via.placeholder.com/200x200.png?text=Lavender+Candle" alt="Iced Coffee Candle" />
+        <h2>Lavender Candle</h2>
+        <p>$6.00</p>
+        <button onclick="addToCart('Iced Coffee Candle', 6.00)">Add to Cart</button>
+      </div>
+      
+      <div class="product">
+        <img src="https://via.placeholder.com/200x200.png?text=Vanilla+Candle" alt="Vanilla & Rasberry Candle" />
+        <h2>Vanilla Candle</h2>
+        <p>$5.50</p>
+        <button onclick="addToCart('Vanilla & Rasberry Candle', 5.50)">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="https://via.placeholder.com/200x200.png?text=Rose+Candle" alt="Strawberry Candle" />
+        <h2>Rose Candle</h2>
+        <p>$5.50</p>
+        <button onclick="addToCart('Strawberry Candle', 5.50)">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="https://via.placeholder.com/200x200.png?text=Rose+Candle" alt="Lavender Candle" />
+        <h2>Rose Candle</h2>
+        <p>$5.50</p>
+        <button onclick="addToCart('Lavender Candle', 5.50)">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Candle Haven</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
