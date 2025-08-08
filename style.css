@@ -63,3 +63,11 @@ footer {
   width: 100%;
   bottom: 0;
 }
+
+.cart-items {
+  padding: 2rem;
+}
+
+.cart-items .product {
+  margin-bottom: 1rem;
+}
