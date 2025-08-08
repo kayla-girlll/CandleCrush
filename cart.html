@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cart - Candle Haven</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Your Cart</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cart-items" id="cart-items"></section>
+    <h2 id="total">Total: $0.00</h2>
+    <a href="checkout.html"><button>Proceed to Checkout</button></a>
+  </main>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartContainer = document.getElementById('cart-items');
+    const totalEl = document.getElementById('total');
+    let total = 0;
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+    } else {
+      cart.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'product';
+        div.innerHTML = `
+          <h3>${item.productName}</h3>
+          <p>Price: $${item.price.toFixed(2)}</p>
+          <button onclick="removeItem(${index})">Remove</button>
+        `;
+        cartContainer.appendChild(div);
+        total += item.price;
+      });
+    }
+
+    totalEl.textContent = `Total: $${total.toFixed(2)}`;
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      location.reload();
+    }
+  </script>
+</body>
+</html>
